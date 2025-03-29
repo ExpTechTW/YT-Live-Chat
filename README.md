@@ -1,4 +1,4 @@
-# trem-report-limit-plugin
+# YT-Live-Chat
 一個用來紀錄 YT直播聊天室 的 Python 工具
 
 ## 索引
