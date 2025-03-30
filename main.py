@@ -17,7 +17,6 @@ class LiveChatMonitor:
             "avatar_url": data["author"].get("imageUrl", ""),
             "content": data.get("message", "")
         }
-        print(f"{payload['username']}: {payload['content']}")
         try:
             response = requests.post(
                 self.webhook_url,
@@ -55,6 +54,7 @@ async def main():
 
             for c in monitor.chat.get().sync_items():
                 data = json.loads(c.json())
+                print(f"{data['author']['name']}: {data['message']}")
                 monitor.send_webhook(data)
             await asyncio.sleep(0.1)
 
